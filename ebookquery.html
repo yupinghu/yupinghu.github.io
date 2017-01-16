@@ -1,0 +1,20 @@
+<title>ebook query</title>
+<script type="text/javascript">
+  function openURI(u) { window.open(u); }
+  function playURI(q) { return "https://play.google.com/store/search?q=" + q + "&c=books"; }
+  function koboURI(q) { return "https://store.kobobooks.com/search?Query=" + q; }
+  function amazonURI(q) { return "https://www.amazon.com/s/?url=search-alias%3Ddigital-text&field-keywords=" + q; }
+
+  function search()
+  {
+    q = encodeURI(document.getElementById('query').value);
+    openURI(playURI(q));
+    openURI(koboURI(q));
+    openURI(amazonURI(q));
+  }
+</script>
+
+<form onsubmit="search(); return false;">
+  <label for="query">Query:</label>
+  <input type="text" id="query" autofocus />
+</form>
