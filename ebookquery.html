@@ -14,6 +14,13 @@
   }
 </script>
 
+window.addEventListener('load', () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  if urlParams.has('q') {
+    search(urlParams.get('q');
+  }
+});
+
 <form onsubmit="search(); return false;">
   <label for="query">Query:</label>
   <input type="text" id="query" autofocus />
