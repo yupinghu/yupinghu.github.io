@@ -12,14 +12,14 @@
     openURI(koboURI(q));
     openURI(amazonURI(q));
   }
-</script>
 
-window.addEventListener('load', () => {
+  window.addEventListener('load', () => {
   const urlParams = new URLSearchParams(window.location.search);
   if urlParams.has('q') {
     search(urlParams.get('q');
   }
 });
+</script>
 
 <form onsubmit="search(); return false;">
   <label for="query">Query:</label>
