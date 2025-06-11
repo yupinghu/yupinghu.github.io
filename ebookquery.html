@@ -1,11 +1,11 @@
 <title>ebook query</title>
 <script type="text/javascript">
-  function openURI(u) { window.open(u); }
+  function openURI(u) { console.log(u); window.open(u); }
   function playURI(q) { return "https://play.google.com/store/search?q=" + q + "&c=books"; }
   function koboURI(q) { return "https://store.kobobooks.com/search?Query=" + q; }
   function amazonURI(q) { return "https://www.amazon.com/s/?url=search-alias%3Ddigital-text&field-keywords=" + q; }
 
-  function search()
+  function search(q)
   {
     openURI(playURI(q));
     openURI(koboURI(q));
