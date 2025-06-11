@@ -7,11 +7,25 @@
 
   function search()
   {
-    q = encodeURI(document.getElementById('query').value);
     openURI(playURI(q));
     openURI(koboURI(q));
     openURI(amazonURI(q));
   }
+
+  function searchBySubmit() {
+    search(encodeURI(document.getElementById('query').value));
+  }
+
+  function searchByURL()
+  {
+    const params = new URLSearchParams(window.location.search);
+    if (params.has("s")) {
+      search(params.get("s"))
+    }
+  }
+
+  window.onload = searchByURL
+
 </script>
 
 <form onsubmit="search(); return false;">
